@@ -1,6 +1,9 @@
 function fn() {
     karate.configure('connectTimeout', 5000);
     karate.configure('readTimeout', 5000);
+    //include http log,  any step that starts with * instead of Given, When, Then etc. will not appear in the HTML report
+    karate.configure('report', { showLog: true, showAllSteps: false });
+
     var port = karate.properties['karate-explorer.server.port'];
     if (!port) {
         port = karate.env == 'web' ? 8090 : 8080;

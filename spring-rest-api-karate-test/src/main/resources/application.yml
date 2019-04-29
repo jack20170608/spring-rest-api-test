@@ -1,4 +1,13 @@
+
 server:
   port: 9999
   servlet:
     context-path: /karate-explorer
+## embeded activemq
+spring:
+  activemq:
+    inMemory: true
+    user: default
+    password: default
+    pool:
+      enabled: false
